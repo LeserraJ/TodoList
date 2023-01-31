@@ -1,13 +1,7 @@
 import React, {useState} from "react"
 //import AddTask from "./addTask.jsx"
-import Counter from "./delete.jsx"
+
 const Body =()=>{
-    
-    
-   
-   
-    
-    
     return(
         
         <div className="d-flex justify-content-center">

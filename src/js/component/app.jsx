@@ -8,7 +8,10 @@ import AddTask from "./addTask.jsx"
 
 const App = ()=>{
     return(
+        <>
+        <Header/>
         <AddTask/>
+        </>
     )
     
    
