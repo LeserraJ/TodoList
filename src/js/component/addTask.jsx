@@ -3,14 +3,22 @@ import React, {useState} from "react"
 
 const AddTask=()=>{
     const [Task, setTask] = useState([]);
+
     const [Item, setItem] = useState("")
+
     const handleChangeItem = event => {
         setItem(event.target.value)
     };
+
         const handleClick = event =>{
         setTask([...Task,{Item:Item}])
     };
     
+    const deleteByIndex = index =>{
+        setTask(oldValues=>{
+            return oldValues.filter((x,i)=> i!==index)
+        })
+    }
 
 console.log(Task);
 return(
@@ -23,9 +31,10 @@ return(
 
     <div className="results">
         <ul>
-            {Task.map((x,i)=>(
-                <li key = {i}>
-                    {x.Item}
+            {Task.map((task,index)=>(
+                <li key = {index}>
+                    {task.Item}
+                    <button onClick={()=>deleteByIndex(index)}>Delete Task</button>
                 </li>
             ))}
         </ul>
